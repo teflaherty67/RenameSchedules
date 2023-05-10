@@ -40,15 +40,23 @@ namespace RenameSchedules
             {
                 int stringLength = curSchedule.ToString().Length;
 
-                // split start = index 29
-                // split end = length - 29
+                // split start = index 28
+                // split end = length - 28
+            }
+
+            foreach (ViewSchedule curSchedule in floorList)
+            {
+                int stringLength = curSchedule.ToString().Length;
+
+                // split start = index 11
+                // split end = length - 11
             }
 
 
 
-            
 
-            
+
+
 
             return Result.Succeeded;
         }
