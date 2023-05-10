@@ -53,11 +53,6 @@ namespace RenameSchedules
             }
 
 
-
-
-
-
-
             return Result.Succeeded;
         }
 
