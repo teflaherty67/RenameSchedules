@@ -26,22 +26,29 @@ namespace RenameSchedules
             Application app = uiapp.Application;
             Document doc = uidoc.Document;
 
-            // get all the schedules
-            List<ViewSchedule> schedList = Utils.GetAllSchedules(doc);
+            // create lists for schedules by name
+            List<ViewSchedule> veneerList = Utils.GetScheduleByNameContains(doc, "Exterior Veneer Calculations");
+            List<ViewSchedule> floorList = Utils.GetScheduleByNameContains(doc, "Floor Areas");
+            List<ViewSchedule> frameList = Utils.GetScheduleByNameContains(doc, "Frame Areas");
+            List<ViewSchedule> atticList = Utils.GetScheduleByNameContains(doc, "Roof Ventilation Calculations");
+            List<ViewSchedule> equipmentList = Utils.GetScheduleByNameContains(doc, "Roof Ventilation Equipment");
+            List<ViewSchedule> indexList = Utils.GetScheduleByNameContains(doc, "Sheet Index");
 
-            // create list of keywords
-            List<string> schedKeywords = new List<string>(){ "Exterior Veneer Calculations",
-               "Floor Areas", "Frame Areas", "Roof Ventilation Calculations",
-               "Roof Ventilation Equipment"};
+            // set split point
 
-            // 
+            foreach (ViewSchedule curSchedule in veneerList)
+            {
+                int stringLength = curSchedule.ToString().Length;
+
+                // split start = index 29
+                // split end = length - 29
+            }
+
+
 
             
 
-            foreach (ViewSchedule schedule in schedList)
-            {
-                string schedName = schedule.Name;
-            }
+            
 
             return Result.Succeeded;
         }
