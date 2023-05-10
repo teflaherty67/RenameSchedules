@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Autodesk.Revit.DB.SpecTypeId;
 
 namespace RenameSchedules
 {
@@ -63,6 +64,18 @@ namespace RenameSchedules
             }
 
             return m_returnList;
+        }
+
+        internal static int GetIndexOfFirstLetter(string schedTitle)
+        {
+            var index = 0;
+            foreach (var c in schedTitle)
+                if (char.IsLetter(c))
+                    return index;
+                else
+                    index++;
+
+            return schedTitle.Length;
         }
     }
 }
