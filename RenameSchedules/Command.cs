@@ -209,8 +209,8 @@ namespace RenameSchedules
                     }
                 }
 
-                TaskDialog.Show("Complete", countRenamed.ToString() + " schedules were renamed."
-                    +  countEdit.ToString() + " schedules would have duplicate names & could not be renamed.");
+                TaskDialog.Show("Complete", countRenamed.ToString() + " schedules will be renamed. "
+                    + countEdit.ToString() + " schedules would have duplicate names & can not be renamed.");
 
                 t.Commit();
             }
