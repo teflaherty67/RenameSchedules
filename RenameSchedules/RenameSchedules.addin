@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command RenameSchedules</Text>
+    <Description>Some description for RenameSchedules</Description>
+    <Assembly>RenameSchedules.dll</Assembly>
+    <FullClassName>RenameSchedules.Command</FullClassName>
+    <ClientId>a1caafb2-fa35-4a03-a5ee-e05b70b94929</ClientId>
+    <VendorId>com.YOUR COMPANY NAME</VendorId>
+    <VendorDescription>YOUR COMPANY NAME, YOUR COMPANY URL</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application RenameSchedules</Name>
+    <Assembly>RenameSchedules.dll</Assembly>
+    <FullClassName>RenameSchedules.App</FullClassName>
+    <ClientId>b8beb6da-fa32-45ba-bd23-904a75b680a1</ClientId>
+    <VendorId>com.YOUR COMPANY NAME</VendorId>
+    <VendorDescription>YOUR COMPANY NAME, YOUR COMPANY URL</VendorDescription>
+  </AddIn>
+</RevitAddIns>
