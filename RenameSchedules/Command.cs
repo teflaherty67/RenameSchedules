@@ -40,6 +40,9 @@ namespace RenameSchedules
             List<ViewSchedule> equipmentList = Utils.GetScheduleByNameContains(doc, "Roof Ventilation Equipment");
             List<ViewSchedule> indexList = Utils.GetScheduleByNameContains(doc, "Sheet Index");
 
+            int countRenamed = 0;
+            int countEdit = 0;
+
             using (Transaction t = new Transaction(doc))
             {
                 t.Start("Rename Schedules");
@@ -57,8 +60,17 @@ namespace RenameSchedules
 
                     if (curElev != "E")
                     {
-                        // replace schedElev with "- Elevation " + curElev
-                        curSchedule.Name = schedTitle + " - Elevation " + curElev;
+                        try
+                        {
+                            // replace schedElev with "- Elevation " + curElev
+                            curSchedule.Name = schedTitle + " - Elevation " + curElev;
+
+                            countRenamed++;
+                        }
+                        catch (Exception)
+                        {
+                            countEdit++;
+                        }                        
                     }
                 }
 
@@ -75,8 +87,17 @@ namespace RenameSchedules
 
                     if (curElev != "E")
                     {
-                        // replace schedElev with "- Elevation " + curElev
-                        curSchedule.Name = schedTitle + " - Elevation " + curElev;
+                        try
+                        {
+                            // replace schedElev with "- Elevation " + curElev
+                            curSchedule.Name = schedTitle + " - Elevation " + curElev;
+
+                            countRenamed++;
+                        }
+                        catch (Exception)
+                        {
+                            countEdit++;
+                        }
                     }
                 }
 
@@ -93,8 +114,17 @@ namespace RenameSchedules
 
                     if (curElev != "E")
                     {
-                        // replace schedElev with "- Elevation " + curElev
-                        curSchedule.Name = schedTitle + " - Elevation " + curElev;
+                        try
+                        {
+                            // replace schedElev with "- Elevation " + curElev
+                            curSchedule.Name = schedTitle + " - Elevation " + curElev;
+
+                            countRenamed++;
+                        }
+                        catch (Exception)
+                        {
+                            countEdit++;
+                        }
                     }                    
                 }
 
@@ -111,8 +141,17 @@ namespace RenameSchedules
 
                     if (curElev != "E")
                     {
-                        // replace schedElev with "- Elevation " + curElev
-                        curSchedule.Name = schedTitle + " - Elevation " + curElev;
+                        try
+                        {
+                            // replace schedElev with "- Elevation " + curElev
+                            curSchedule.Name = schedTitle + " - Elevation " + curElev;
+
+                            countRenamed++;
+                        }
+                        catch (Exception)
+                        {
+                            countEdit++;
+                        }
                     }
                 }
 
@@ -129,8 +168,17 @@ namespace RenameSchedules
 
                     if (curElev != "E")
                     {
-                        // replace schedElev with "- Elevation " + curElev
-                        curSchedule.Name = schedTitle + " - Elevation " + curElev;
+                        try
+                        {
+                            // replace schedElev with "- Elevation " + curElev
+                            curSchedule.Name = schedTitle + " - Elevation " + curElev;
+
+                            countRenamed++;
+                        }
+                        catch (Exception)
+                        {
+                            countEdit++;
+                        }
                     }
                 }
 
@@ -147,10 +195,22 @@ namespace RenameSchedules
 
                     if (curElev != "E")
                     {
-                        // replace schedElev with "- Elevation " + curElev
-                        curSchedule.Name = schedTitle + " - Elevation " + curElev;
+                        try
+                        {
+                            // replace schedElev with "- Elevation " + curElev
+                            curSchedule.Name = schedTitle + " - Elevation " + curElev;
+
+                            countRenamed++;
+                        }
+                        catch (Exception)
+                        {
+                            countEdit++;
+                        }
                     }
                 }
+
+                TaskDialog.Show("Complete", countRenamed.ToString() + " schedules were renamed."
+                    +  countEdit.ToString() + " schedules would have duplicate names & could not be renamed.");
 
                 t.Commit();
             }
